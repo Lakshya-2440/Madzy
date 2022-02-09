@@ -1,0 +1,32 @@
+* {
+  @import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Merriweather:wght@300&family=Playfair+Display&display=swap");
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #0cbaba;
+  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  height: 663px;
+}
+.center {
+  margin: auto;
+  margin-top: 50px;
+}
+#header {
+  font-size: 70px;
+  font-family: "Playfair Display", serif;
+  color: rgb(0, 0, 0);
+  line-height: 160px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+h2 {
+  font-family: "Righteous", sans-serif;
+}
+#search {
+  margin-left: 5px;
+}
+.book-list {
+  margin-top: 50px;
+  visibility: hidden;
+}

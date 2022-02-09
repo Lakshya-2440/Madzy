@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whiteboard</title>
+    <link rel="stylesheet" href="/Whiteboard/stylewhite.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/Home/index.html">Home</a></li>
+        <li><a href="../Dictionary/index.html">Dictionary</a></li>
+        <li><a href="../Notes/index.html">Notes</a></li>
+        <li><a href="../Todo/index_todo.html">To-do</a></li>
+        <li><a href="../Whiteboard/index_whiteboard.html">Whiteboard</a></li>
+        <li><a href="/Book-finder/index.html">Book Finder</a></li>
+      </ul>
+    </nav>
+    <section class="container">
+      <div id="toolbar">
+        <label for="stroke">Colour: </label>
+        <input id="stroke" name="stroke" type="color" />
+        <label for="lineWidth">Line Width</label>
+        <input id="lineWidth" name="lineWidth" type="number" value="1" />
+        <button id="clear">Clear</button>
+      </div>
+      <div class="drawing-board">
+        <canvas id="drawing-board"></canvas>
+      </div>
+    </section>
+    <script src="/Whiteboard/scriptwhite.js"></script>
+  </body>
+</html>

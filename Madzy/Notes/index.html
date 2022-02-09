@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="/Notes/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/Home/index.html">Home</a></li>
+        <li><a href="../Dictionary/index.html">Dictionary</a></li>
+        <li><a href="../Notes/index.html">Notes</a></li>
+        <li><a href="../Todo/index_todo.html">To-do</a></li>
+        <li><a href="../Whiteboard/index_whiteboard.html">Whiteboard</a></li>
+        <li><a href="/Book-finder/index.html">Book Finder</a></li>
+      </ul>
+    </nav>
+    <header>Notes</header>
+    <div class="container">
+      <form>
+        <div class="form-control">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="text"
+            placeholder="Enter Your Title"
+            autocomplete="off"
+            name="title"
+          />
+        </div>
+        <div class="form-control">
+          <label for="desc">Description</label
+          ><input
+            type="text"
+            id="desc"
+            placeholder="Enter Your Desc"
+            autocomplete="off"
+            name="desc"
+          />
+        </div>
+        <button class="submit">+</button>
+      </form>
+    </div>
+    <div class="notes"></div>
+    <script src="/Notes/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+*{
+    @import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Merriweather:wght@300&family=Playfair+Display&display=swap');
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+}
+#root{
+    display: flex;
+    flex-wrap: wrap;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #eee;
+    font-family: system-ui;
+    background-color: #0cbaba;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+
+}
+nav{
+    width: 100%;
+    display: flex;
+    min-height: 10vh;
+    font-size: 3rem;
+    align-items: center;
+    padding: 0 3rem;
+}
+nav .logo{
+    letter-spacing: 2px;
+    color: rgb(10, 0, 0);
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 0 0;
+}
+form{
+    width: 500px;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0px 0px 10px #000 ;
+    border-radius: 10px;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+}
+input{
+    padding: 10px 0 ;
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: 0;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: transparent;
+    outline: none;
+}
+input:placeholder-shown{
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+.form-control label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 7px;
+}
+.submit{
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px #000;
+    background-color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+.submit:hover{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(241, 241, 43);
+    transition: all 0.5s;
+    border: 2px solid rgb(241, 241, 43);
+}
+.notes{
+    width: 100%;
+    display: flex;
+    padding: 3rem 2rem 2rem 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+header{
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: -23px;
+    margin-top: -16px;
+    line-height: 160px;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+.card{
+    background: #fff;
+    padding: 1rem 1.5rem 1rem;
+    /* overflow: visible; */
+    width: 32rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    margin: 1rem 2rem;
+}
+.card h3{
+    font-size: 1.9rem;
+    padding-bottom: 7px;
+    position: relative;
+    display: inline;
+}
+.card p{
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 0;
+}
+.card h3::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: 6px;
+    left: 0;
+    background: rgb(255, 17, 17);
+}
+nav{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+nav ul{
+  flex: 1 ;
+  /* align-items: center; */
+  text-align: center;
+  padding-right: 30px;
+}
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 30px;
+}
+nav ul li a{
+  color: rgb(235, 235, 235);
+  font-size: 30px;
+  position: relative;
+  text-decoration: none;
+}
+nav ul li a::after{
+  content: '';
+  width: 0px;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  transition: width 0.1s;
+}
+nav ul li a:hover::after{
+  width: 100%;
+}
+.del{
+    padding: 8px 15px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgb(71, 71, 71);
+    color: rgb(255, 255, 255);
+}
+.del:hover{
+    background: rgb(0, 0, 0);
+    transition: all 0.4s;
+    color: #fff;
+}
+footer{
+   width: 100%;
+   text-align: center;
+   font-size: 1.5rem;
+   position: fixed;
+   bottom: 10px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login</title>
+    <link rel="stylesheet" href="/Home/style.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+       body{
+           display: flex;
+           justify-content:center ;
+           align-items: center;
+           height : 100vh;
+           width : 100vw;
+           margin : 0px;
+           
+       } 
+    </style>
+</head>
+<body>
+    <div class = "mb-5">
+        <h3 class="mb-3">Sign In</h3>
+
+        <input type="text" placeholder="Username" id="userInp" class = "form-control mb-3">
+        <input type="text" placeholder="password" id="passInp" class = "form-control mb-3">
+      
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Keep Me Logged In</label>
+        </div>
+        <button type="text" id ="sub_btn" class = "btn btn-outline-primary mb-3 w-100">Sign In</button>
+        <a href="index2.html" class="badge badge-secondary py-1 w-100">Want to create an account?</a>
+
+    </div>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAHDdBr-NbG9tvlitOxAFjsYtycsQSJGDs",
+          authDomain: "loginpage-f877f.firebaseapp.com",
+          projectId: "loginpage-f877f",
+          storageBucket: "loginpage-f877f.appspot.com",
+          messagingSenderId: "965702996940",
+          appId: "1:965702996940:web:632f7a81986cbefafc4369"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        import{getDatabase,ref,set,child,get,update,remove}
+from "https://www.gstatic.com/firebasejs/9.6.5/firebase-database.js"
+  
+        const db  = getDatabase();
+
+
+        const username = document.getElementById('userInp');
+        const pass = document.getElementById('passInp');
+        const submit = document.getElementById('sub_btn')
+
+        function AuthenticateUser(){
+            const dbRef = ref(db)
+
+          get(child(dbRef,"UsersList/" + username.value)).then((snapshot)=>{
+              if(snapshot.exists()){
+                  let dbpass = decPass(snapshot.val().password)
+                  
+                  if(dbpass == pass.val ){
+                      login(snapshot.val());
+                  }
+                  else{
+                    login(snapshot.val());
+                  
+              } 
+              }
+              else{
+                login(snapshot.val());
+                  
+              } 
+
+             
+          }) 
+        }
+
+        function decPass(dbpass){
+              var pass12  = CryptoJS.AES.decrypt(dbpass , pass.value)
+              return pass12.toString(CryptoJS.enc.Utf8);
+          }
+          function login(user){
+
+            let keepLoggedIn = document.getElementById('customSwitch1').checked;
+
+            if(!keepLoggedIn){
+                sessionStorage.setItem('user', JSON.stringify(user))
+                window.location = "/Home/index.html"
+            }
+            else{
+                localStorage.setItem('keepLoggedIn','yes');
+                localStorage.setItem('user',JSON.stringify(user));
+                window.location = "/Home/index.html";
+            }
+
+          }
+        
+          submit.addEventListener("click",AuthenticateUser)
+      </script>
+</body>
+</html>
